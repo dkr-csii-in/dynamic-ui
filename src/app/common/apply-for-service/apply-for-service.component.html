@@ -1,1 +1,30 @@
-<p>apply-for-service works!</p>
+
+<ng-container *ngIf="dataModel && formSettings">
+    <mat-label>{{formSettings.FormTitle}}</mat-label>
+    <div *ngFor="let group of formSettings.FieldGroups">
+        <mat-label *ngIf="group.GroupTitle">{{group.GroupTitle}}</mat-label>
+        <div *ngFor="let field of group.Fields">
+            <ng-template [ngTemplateOutlet]="getTemplate(field.Template)" 
+                [ngTemplateOutletContext]="{$implicit: field, formField: field.BackingField.replace('.', '_')}"></ng-template>
+        </div>
+    </div>
+</ng-container>
+<div>
+    {{dataModel | json}}
+</div>
+<div>
+    {{data | json}}
+</div>
+
+
+<ng-template templateName="ULBPicker" let-model let-field="formField">
+    <app-ulb-picker [(selectedUlb)]="dataModel[field]" (selectedUlbChange)="onchange($event, field)"></app-ulb-picker>
+</ng-template>
+
+
+<ng-template #default let-model let-field="formField">
+    <mat-form-field>
+        <mat-label>{{model.Label}}</mat-label>
+        <input matInput placeholder="{{model.Label}}" [(ngModel)]="dataModel[field]" (change)="onchange($event, field)" />
+    </mat-form-field>
+</ng-template>

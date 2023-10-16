@@ -1,8 +1,17 @@
 {
-    "folderType": "BP",
-    "fields": [
-        {"order": 10, "label": "Select ULB", "backingField": "folder.referenceFile2", "type": "Choose", "options": "ULBList"},
-        {"order": 20, "label": "Service Type", "backingField": "folder.subCode", "type": "Choose", "options": "ValidFolderSub"},
-        {"order": 30, "label": "Area Type", "backingField": "folder.workCode", "type": "Choose", "options": "ValidFolderWork"}
+    "FormTitle": "Map Application",
+    "FolderType": "BP",
+    "FieldGroups": [
+        {   
+            "GroupTitle": "Test",
+            "Fields": [
+                {"Order": 10, "Label": "Select ULB", "BackingField": "folder.referenceFile2", "Template": "ULBPicker"},
+                {"Order": 20, "Label": "Service Type", "BackingField": "folder.subCode", "Template": "ValidSubPicker", "ReloadOn": ["ULBPicker"]},
+                {"Order": 30, "Label": "Area Type", "BackingField": "folder.workCode", "Template": "ValidWorkPicker"},
+                {"Order": 40, "Label": "Description", "BackingField": "folder.folderDescription", "Template": "TextArea"}
+            ]
+        }
+        
     ]
+    
 }

@@ -1,0 +1,23 @@
+{{invoice| json}}
+<div>
+    <ng-container [ngTemplateOutlet]="invoiceDetail" 
+        [ngTemplateOutletContext]="{$implicit: invoice.invoiceDetail}"></ng-container><br />
+    <button type="button" (click)="addEntry()">Add Entry</button>
+<div *ngFor="let entry of invoice.entrys">
+    <ng-container [ngTemplateOutlet]="invoiceEntry" 
+        [ngTemplateOutletContext]="{$implicit: entry.invoiceEntry, taxes: entry.taxes}"></ng-container>
+</div>
+</div>
+
+
+<ng-template #invoiceDetail let-invoiceDetail>
+    <label>Vendor ID</label>
+    <input type="text" name="vendorId" [(ngModel)]="invoiceDetail.vendorId">
+</ng-template>
+
+<ng-template #invoiceEntry let-invoiceEntry let-taxes="taxes">
+    <input type="text" name="hsn" [(ngModel)]="invoiceEntry.hsn">
+    <ng-container *ngFor="let tax of taxes">
+        <input type="text" name="taxid" [(ngModel)]="tax.taxId">
+    </ng-container>
+</ng-template>

@@ -1,0 +1,7 @@
+<mat-form-field>
+    <mat-label>Select ULB</mat-label>
+    <mat-select (selectionChange)="onUlbChanged($event)" [(value)]="selectedUlb">
+      <mat-option *ngFor="let item of ulbList" [value]="item.id">{{item.description}}</mat-option>
+    </mat-select>
+    <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
+</mat-form-field>

@@ -1,0 +1,6 @@
+<button mat-button [matMenuTriggerFor]="menu">Services</button>
+<mat-menu #menu="matMenu">
+    <ng-container *ngFor="let item of services">
+        <button type="button" mat-menu-item (click)="navigeteTo(item.folderType)">{{item.folderDesc}}</button>
+    </ng-container>
+</mat-menu>
