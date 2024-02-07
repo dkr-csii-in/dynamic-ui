@@ -1,1 +1,7 @@
-<p>valid-sub-picker works!</p>
+<mat-form-field>
+    <mat-label>{{field.Label}}</mat-label>
+    <mat-select (selectionChange)="onValueChanged($event)" [(value)]="subCode">
+      <mat-option *ngFor="let item of itemList" [value]="item.subCode">{{item.subDesc}}</mat-option>
+    </mat-select>
+    <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
+</mat-form-field>

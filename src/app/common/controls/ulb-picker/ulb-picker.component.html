@@ -1,5 +1,5 @@
 <mat-form-field>
-    <mat-label>Select ULB</mat-label>
+    <mat-label>{{field.Label}}</mat-label>
     <mat-select (selectionChange)="onUlbChanged($event)" [(value)]="selectedUlb">
       <mat-option *ngFor="let item of ulbList" [value]="item.id">{{item.description}}</mat-option>
     </mat-select>

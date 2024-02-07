@@ -12,6 +12,7 @@ import { UlbPickerComponent } from './controls/ulb-picker/ulb-picker.component';
 import { ValidSubPickerComponent } from './controls/valid-sub-picker/valid-sub-picker.component';
 import { ValidWorkPickerComponent } from './controls/valid-work-picker/valid-work-picker.component';
 import { TemplateNameDirective } from './directives/template-name.directive';
+import { TextBoxComponent } from './controls/text-box/text-box.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { TemplateNameDirective } from './directives/template-name.directive';
         UlbPickerComponent,
         ValidSubPickerComponent,
         ValidWorkPickerComponent,
-        TemplateNameDirective
+        TemplateNameDirective,
+        TextBoxComponent
     ],
     imports: [
         CommonModule,

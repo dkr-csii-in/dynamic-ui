@@ -1,0 +1,5 @@
+<mat-form-field>
+    <mat-label>{{field.Label}}</mat-label>
+    <input matInput placeholder="{{field.Label}}" [(ngModel)]="dataModel[fieldName]" 
+    (change)="onchange($event)" />
+</mat-form-field>

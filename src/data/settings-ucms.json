@@ -1,0 +1,15 @@
+{
+    "FormTitle": "Unauthorized Case Management",
+    "FolderType": "UCMS",
+    "FieldGroups": [
+        {   
+            "GroupTitle": "Test",
+            "Fields": [
+                {"Order": 10, "Label": "Select Authority", "BackingField": "folder.referenceFile2", "Template": "ULBPicker"},
+                {"Order": 20, "Label": "Case Description", "BackingField": "folder.folderDescription", "Template": "TextArea"}
+            ]
+        }
+        
+    ]
+    
+}

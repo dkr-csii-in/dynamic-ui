@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { firstValueFrom } from 'rxjs';
 import { ValidType } from 'src/app/dto/valid-type';
+import { FormField } from 'src/app/services/data.service';
 import { FormHelperService } from 'src/app/services/form-helper.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class UlbPickerComponent implements OnInit {
   ulbList: ValidType[] = [];
   @Output() selectedUlbChange: EventEmitter<string> = new EventEmitter<string>();
   @Input() selectedUlb?: string;
+  @Input() field!: FormField
 
   constructor(private formHelper: FormHelperService) { }
 

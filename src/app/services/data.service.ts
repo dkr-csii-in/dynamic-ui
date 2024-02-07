@@ -28,5 +28,5 @@ export interface FormField {
   Label: string;
   BackingField: string;
   Template: string;
-  ReloadOn?: string;
+  ReloadOn?: string[];
 }
